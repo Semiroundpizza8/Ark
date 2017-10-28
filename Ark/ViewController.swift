@@ -39,6 +39,7 @@ class ViewController: UIViewController {
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -51,7 +52,6 @@ class ViewController: UIViewController {
 
     func downloadPredictions(){
         //CHECK FOR INTERNET CONNECTION
-       
             
         let searchURL = "http://api.fixer.io/latest?symbols=USD,GBP"
             guard let requestUrl = URL(string:searchURL)

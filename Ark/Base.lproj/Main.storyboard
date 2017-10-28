@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-772" y="137"/>
         </scene>
-        <!--Item-->
+        <!--Role-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ark" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,47 +36,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlG-11-V7R">
-                                <state key="normal" title="Become Savior"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Capacity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t7x-8T-9iH">
+                                <frame key="frameInset" minX="136" minY="165" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sRj-Si-Efj">
+                                <frame key="frameInset" minX="67" minY="390" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPk-MM-czD">
+                                <frame key="frameInset" minX="129" minY="526" width="117" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Become Survivor"/>
+                                <connections>
+                                    <action selector="sendSavedButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fhl-CW-Gmw"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Size" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YcK-nV-nb0">
+                                <frame key="frameInset" minX="129" minY="352" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlG-11-V7R">
+                                <frame key="frameInset" minY="215" width="233" height="85"/>
+                                <state key="normal" title="Become Savior" image="Savior" backgroundImage="powered-by-google-light.png"/>
                                 <connections>
                                     <action selector="sendSavedButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XTm-3y-jNb"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j6q-zA-oAC">
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GJi-HN-sc1">
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPk-MM-czD">
-                                                <state key="normal" title="Become Survivor"/>
-                                                <connections>
-                                                    <action selector="sendSavedButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fhl-CW-Gmw"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="sPk-MM-czD" firstAttribute="top" secondItem="GJi-HN-sc1" secondAttribute="top" id="Fap-bO-dZE"/>
-                                            <constraint firstAttribute="bottom" secondItem="sPk-MM-czD" secondAttribute="bottom" id="lla-mb-LiC"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="j6q-zA-oAC" firstAttribute="top" secondItem="JlG-11-V7R" secondAttribute="bottom" constant="98" id="2Qo-xF-Ca6"/>
-                            <constraint firstItem="j6q-zA-oAC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fys-iH-6cz"/>
                             <constraint firstItem="JlG-11-V7R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o3I-FA-03Z"/>
                             <constraint firstItem="JlG-11-V7R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="196" id="zQo-aw-iju"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="UbA-QV-LUt"/>
+                    <tabBarItem key="tabBarItem" title="Role" id="UbA-QV-LUt"/>
                     <navigationItem key="navigationItem" id="6UE-er-43c"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="-286"/>
+            <point key="canvasLocation" x="157.59999999999999" y="-286.50674662668666"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="A2x-C2-Tbp">
             <objects>
                 <viewController id="EVN-Qs-COk" customClass="MapViewController" customModule="Ark" customModuleProvider="target" sceneMemberID="viewController">
@@ -102,7 +113,7 @@
                             <constraint firstItem="NzI-pj-VZz" firstAttribute="leading" secondItem="jjG-D0-Bhg" secondAttribute="leading" id="ihi-w3-8ZX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="l70-72-qZa"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcons" id="l70-72-qZa"/>
                     <connections>
                         <outlet property="mapView" destination="NzI-pj-VZz" id="C4V-Gg-nZ5"/>
                     </connections>
@@ -112,4 +123,9 @@
             <point key="canvasLocation" x="158" y="561"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MapIcons" width="48" height="32"/>
+        <image name="Savior" width="142" height="44"/>
+        <image name="powered-by-google-light.png" width="120" height="14"/>
+    </resources>
 </document>

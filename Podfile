@@ -21,5 +21,4 @@ target 'Ark' do
   pod 'GooglePlaces'
 
   pod 'SwiftyJSON'
-  pod ‘RZVibrantButton’
 end
