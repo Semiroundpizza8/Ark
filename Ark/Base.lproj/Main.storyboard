@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hnq-lh-dZd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="cso-S9-9gq">
+            <objects>
+                <tabBarController id="Hnq-lh-dZd" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="fWt-mg-FLp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Mnw-WA-Nsx"/>
+                        <segue destination="EVN-Qs-COk" kind="relationship" relationship="viewControllers" id="xAW-JE-42G"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4s9-PG-vqp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="137"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ark" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,32 +37,79 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JlG-11-V7R">
-                                <state key="normal" title="Send Savior"/>
+                                <state key="normal" title="Become Savior"/>
                                 <connections>
                                     <action selector="sendSavedButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XTm-3y-jNb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPk-MM-czD">
-                                <state key="normal" title="Send Saved"/>
-                                <connections>
-                                    <action selector="sendSavedButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fhl-CW-Gmw"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j6q-zA-oAC">
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GJi-HN-sc1">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPk-MM-czD">
+                                                <state key="normal" title="Become Survivor"/>
+                                                <connections>
+                                                    <action selector="sendSavedButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fhl-CW-Gmw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="sPk-MM-czD" firstAttribute="top" secondItem="GJi-HN-sc1" secondAttribute="top" id="Fap-bO-dZE"/>
+                                            <constraint firstAttribute="bottom" secondItem="sPk-MM-czD" secondAttribute="bottom" id="lla-mb-LiC"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sPk-MM-czD" secondAttribute="bottom" constant="20" id="AF1-f4-QzR"/>
-                            <constraint firstItem="sPk-MM-czD" firstAttribute="leading" secondItem="JlG-11-V7R" secondAttribute="trailing" constant="111" id="fO2-Ri-Bnm"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JlG-11-V7R" secondAttribute="bottom" constant="20" id="gYv-4G-An2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="sPk-MM-czD" secondAttribute="trailing" constant="21" id="pwL-z8-hcw"/>
-                            <constraint firstItem="sPk-MM-czD" firstAttribute="leading" secondItem="JlG-11-V7R" secondAttribute="trailing" constant="111" id="zLm-KK-fUG"/>
-                            <constraint firstItem="JlG-11-V7R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="zN6-7N-bjA"/>
+                            <constraint firstItem="j6q-zA-oAC" firstAttribute="top" secondItem="JlG-11-V7R" secondAttribute="bottom" constant="98" id="2Qo-xF-Ca6"/>
+                            <constraint firstItem="j6q-zA-oAC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fys-iH-6cz"/>
+                            <constraint firstItem="JlG-11-V7R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o3I-FA-03Z"/>
+                            <constraint firstItem="JlG-11-V7R" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="196" id="zQo-aw-iju"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="UbA-QV-LUt"/>
+                    <navigationItem key="navigationItem" id="6UE-er-43c"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+            <point key="canvasLocation" x="158" y="-286"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="A2x-C2-Tbp">
+            <objects>
+                <viewController id="EVN-Qs-COk" customClass="MapViewController" customModule="Ark" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k5m-4R-Hf7"/>
+                        <viewControllerLayoutGuide type="bottom" id="iwn-AF-hET"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jjG-D0-Bhg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NzI-pj-VZz">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="Wck-2A-xRw"/>
+                                </constraints>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NzI-pj-VZz" firstAttribute="centerX" secondItem="jjG-D0-Bhg" secondAttribute="centerX" id="7mS-SN-YCN"/>
+                            <constraint firstItem="NzI-pj-VZz" firstAttribute="top" secondItem="k5m-4R-Hf7" secondAttribute="bottom" id="Deu-v5-Xu4"/>
+                            <constraint firstItem="NzI-pj-VZz" firstAttribute="bottom" secondItem="iwn-AF-hET" secondAttribute="top" id="S0y-bx-Ttv"/>
+                            <constraint firstItem="NzI-pj-VZz" firstAttribute="leading" secondItem="jjG-D0-Bhg" secondAttribute="leading" id="ihi-w3-8ZX"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="l70-72-qZa"/>
+                    <connections>
+                        <outlet property="mapView" destination="NzI-pj-VZz" id="C4V-Gg-nZ5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9FG-19-iQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="158" y="561"/>
         </scene>
     </scenes>
 </document>

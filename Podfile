@@ -17,5 +17,9 @@ target 'Ark' do
     # Pods for testing
   end
 
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+
   pod 'SwiftyJSON'
+  pod ‘RZVibrantButton’
 end
