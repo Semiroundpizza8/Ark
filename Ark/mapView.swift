@@ -11,14 +11,15 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
-    @IBOutlet var mapView: MKMapView!
     
+    @IBOutlet var mapView: MKMapView!
+
     var victimCoords = [
-        (name: "one", latitude: 29.752223, longitude: -95.221097),
-        (name: "two", latitude: 29.688118, longitude: -95.240667),
-        (name: "three", latitude: 29.688864, longitude: -95.255258),
-        (name: "four", latitude: 29.413096, longitude: -95.019782),
-        (name: "five", latitude: 29.400983, longitude: -95.040896)
+        (name: "one", latitude: 29.752223, longitude: -95.221097, role: "victim"),
+        (name: "two", latitude: 29.688118, longitude: -95.240667, role: "victim"),
+        (name: "three", latitude: 29.688864, longitude: -95.255258, role: "savior"),
+        (name: "four", latitude: 29.413096, longitude: -95.019782, role: "victim"),
+        (name: "five", latitude: 29.400983, longitude: -95.040896, role: "savior")
     ]
     
     override func viewDidLoad() {
@@ -31,35 +32,35 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         let reuseId = "pin"
         
-        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         
         if pinView == nil {
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             pinView!.canShowCallout = true
-            pinView!.pinTintColor = .red
-            pinView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         }
         else {
             pinView!.annotation = annotation
         }
-        
+        let customPointAnnotation = annotation as! CustomPointAnnotation
+        pinView?.image = UIImage(named: customPointAnnotation.pinCustomImageName)
+
         return pinView
     }
     
-    // This delegate method is implemented to respond to taps. It opens the system browser
-    // to the URL specified in the annotationViews subtitle property.
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        if control == view.rightCalloutAccessoryView {
-            let app = UIApplication.shared
-            if let toOpen = view.annotation?.subtitle! {
-                app.openURL(URL(string: toOpen)!)
-            }
-        }
-    }
-    
+//    // This delegate method is implemented to respond to taps. It opens the system browser
+//    // to the URL specified in the annotationViews subtitle property.
+//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+//        if control == view.rightCalloutAccessoryView {
+//            let app = UIApplication.shared
+//            if let toOpen = view.annotation?.subtitle! {
+//                app.openURL(URL(string: toOpen)!)
+//            }
+//        }
+//    }
+//    
     // Function to refresh locations found.
     func refreshView() {
-        var annotations = [MKPointAnnotation]()
+        var annotations = [CustomPointAnnotation]()
         for victim in victimCoords {
             
             // Notice that the float values are being used to create CLLocationDegree values.
@@ -71,9 +72,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
             
             // Here we create the annotation and set its coordiate, title, and subtitle properties
-            let annotation = MKPointAnnotation()
+            let annotation = CustomPointAnnotation()
             annotation.coordinate = coordinate
             annotation.title = "\(victim.name)"
+            annotation.pinCustomImageName = victim.role == "victim" ? "Lifeguard" : "Boat";
 //                annotation.subtitle = ...
             
             // Finally we place the annotation in an array of annotations.

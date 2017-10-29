@@ -17,6 +17,7 @@
 		5E28C3511FA44D110033A033 /* ArkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E28C3501FA44D110033A033 /* ArkTests.swift */; };
 		5E28C35C1FA44D110033A033 /* ArkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E28C35B1FA44D110033A033 /* ArkUITests.swift */; };
 		5EB8D7471FA52CA3007BA648 /* mapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8D7461FA52CA3007BA648 /* mapView.swift */; };
+		5EB8D7491FA58655007BA648 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB8D7481FA58655007BA648 /* CustomPointAnnotation.swift */; };
 		BC6A46B29D3A995E9FC0747C /* Pods_ArkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23338B8BA4C6329E9499B56B /* Pods_ArkUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		5E28C35B1FA44D110033A033 /* ArkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArkUITests.swift; sourceTree = "<group>"; };
 		5E28C35D1FA44D110033A033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EB8D7461FA52CA3007BA648 /* mapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapView.swift; sourceTree = "<group>"; };
+		5EB8D7481FA58655007BA648 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		6E1FB027048B76E95D60A73F /* Pods-Ark.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ark.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ark/Pods-Ark.release.xcconfig"; sourceTree = "<group>"; };
 		86DC197CA03A391129C3F158 /* Pods-ArkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArkTests/Pods-ArkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B3A2DE1237031D22392B81C1 /* Pods_Ark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 				5E28C3441FA44D110033A033 /* LaunchScreen.storyboard */,
 				5E28C3471FA44D110033A033 /* Info.plist */,
 				5EB8D7461FA52CA3007BA648 /* mapView.swift */,
+				5EB8D7481FA58655007BA648 /* CustomPointAnnotation.swift */,
 			);
 			path = Ark;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 			files = (
 				5E28C33E1FA44D100033A033 /* ViewController.swift in Sources */,
 				5E28C33C1FA44D100033A033 /* AppDelegate.swift in Sources */,
+				5EB8D7491FA58655007BA648 /* CustomPointAnnotation.swift in Sources */,
 				5EB8D7471FA52CA3007BA648 /* mapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

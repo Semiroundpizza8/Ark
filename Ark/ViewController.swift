@@ -43,6 +43,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("The date is...\(Date.init())")
     }
 
     override func didReceiveMemoryWarning() {
